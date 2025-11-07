@@ -34,12 +34,33 @@
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter</artifactId>
 		</dependency>
+		<!-- Flowable для BPMN -->
+		<dependency>
+			<groupId>org.flowable</groupId>
+			<artifactId>flowable-engine</artifactId>
+			<version>6.7.2</version>
+		</dependency>
 
+		<!-- Swagger Parser для OpenAPI -->
+		<dependency>
+			<groupId>io.swagger.parser.v3</groupId>
+			<artifactId>swagger-parser</artifactId>
+			<version>2.1.12</version>
+		</dependency>
+
+		<!-- ONNX Runtime для AI -->
+		<dependency>
+			<groupId>com.microsoft.onnxruntime</groupId>
+			<artifactId>onnxruntime</artifactId>
+			<version>1.14.0</version>
+		</dependency>
+		
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-test</artifactId>
 			<scope>test</scope>
 		</dependency>
+		
 	</dependencies>
 
 	<build>
