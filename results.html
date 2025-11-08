@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Результаты анализа BPMN</title>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 40px; }
+        .task-list { background: #f5f5f5; padding: 20px; border-radius: 5px; }
+        .task-item { margin: 10px 0; padding: 10px; background: white; border-left: 4px solid #007bff; }
+        button { background: #28a745; color: white; padding: 15px 30px; border: none; cursor: pointer; font-size: 16px; }
+        button:hover { background: #218838; }
+    </style>
+</head>
+<body>
+    <h1>Найденные задачи в BPMN:</h1>
+    
+    <div class="task-list">
+        <div th:each="task : ${tasks}" class="task-item">
+            <span th:text="${task.name}"></span>
+        </div>
+    </div>
+    
+    <br>
+    <form method="POST" action="/runtest">
+        <button type="submit">🎯 Запустить тестирование</button>
+    </form>
+</body>
+</html>
