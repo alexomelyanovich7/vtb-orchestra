@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Оркестр - Тестирование BPMN</title>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 40px; }
+        .container { max-width: 800px; margin: 0 auto; }
+        .upload-form { border: 2px dashed #ccc; padding: 20px; text-align: center; }
+        button { background: #007bff; color: white; padding: 10px 20px; border: none; cursor: pointer; }
+        button:hover { background: #0056b3; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>🎻 Оркестр - Тестирование BPMN процессов</h1>
+        
+        <div class="upload-form">
+            <h2>Загрузите BPMN файл</h2>
+            <form method="POST" action="/upload" enctype="multipart/form-data">
+                <input type="file" name="file" accept=".bpmn" required>
+                <br><br>
+                <button type="submit">Загрузить и проанализировать</button>
+            </form>
+        </div>
+        
+        <div th:if="${error}" style="color: red; margin-top: 20px;">
+            Ошибка: <span th:text="${error}"></span>
+        </div>
+    </div>
+</body>
+</html>
