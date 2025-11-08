@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Результаты тестирования</title>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 40px; }
+        .success { color: green; }
+        .error { color: red; }
+        .result-item { 
+            padding: 10px; 
+            margin: 5px 0; 
+            border-left: 4px solid;
+            background: #f9f9f9;
+        }
+        .success-item { border-left-color: #28a745; }
+        .error-item { border-left-color: #dc3545; }
+    </style>
+</head>
+<body>
+    <h1>🎉 Результаты тестирования</h1>
+    
+    <div th:each="result : ${testResults}" 
+         class="result-item" 
+         th:classappend="${result.success} ? 'success-item' : 'error-item'">
+        
+        <strong th:text="${result.taskName}"></strong><br>
+        <span th:text="${result.message}"></span>
+    </div>
+    
+    <br>
+    <a href="/">← Назад к загрузке файлов</a>
+</body>
+</html>
